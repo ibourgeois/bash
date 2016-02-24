@@ -1,6 +1,14 @@
 # bash
 bash tools
 
+# install
+
+simply copy the contents of the `.bashrc` file to your `.bashrc` file or simply run this command `(will append to the end of your .bashrc, not overwrite it)`:
+
+```
+cat https://raw.githubusercontent.com/iBourgeois/bash/master/.bashrc >> ~/.bashrc
+```
+
 | Command | Description |
 |:-------:|:-----------:|
 | `c` | will clear the screen |
