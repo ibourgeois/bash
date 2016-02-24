@@ -1,6 +1,11 @@
-alias c="clear"
-alias back="cd $OLDPWD"
+if [[ -f ~/.bash_aliases ]]; then
+    . ~/.bash_aliases
+fi
 
+alias c="clear"
+alias h="cd ~/"
+alias hc="cd ~/ && clear"
+alias back="cd $OLDPWD"
 alias ls="ls --color=auto"
 
 alias .="cd ../"
@@ -11,6 +16,8 @@ alias update="sudo apt-get update && sudo apt-get upgrade -y"
 
 alias edit="nano ~/.bashrc ; source ~.bashrc"
 alias reload="source ~/.bashrc"
+
+alias art="php artisan"
 
 gitup() {
     git add .
@@ -45,4 +52,16 @@ s() {
     else
     	sudo "$@"
     fi
+}
+
+up() {
+    local path i
+    for (( i=0; i < $1; i++ )); do
+        path+=../
+    done
+    cd "$path"
+}
+
+function pdfman() {
+    man -t $@ | pstopdf -i -o /tmp/$1.pdf && open /tmp/$1.pdf
 }
