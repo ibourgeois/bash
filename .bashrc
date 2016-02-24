@@ -18,7 +18,7 @@ gitup() {
 }
 
 extract () {
-    if [ -f $1 ] ; then
+    if [[ -f $1 ]]; then
         case $1 in
             *.tar.bz2)   tar xvjf $1    ;;
             *.tar.gz)    tar xvzf $1    ;;
